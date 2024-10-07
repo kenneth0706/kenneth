@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>報修系統</title>
+    <link rel="stylesheet" href="repair.css">
+</head>
+<body>
+    <header>
+        <h1>報修系統</h1>
+        <button class="back-button" onclick="window.location='index.html'">返回首頁</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>報修請求</h2>
+            <form id="repairForm">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">聯絡電話：</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="address">地址：</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="repairType">選擇問題類型：</label>
+                <select id="repairType" name="repairType" required>
+                    <option value="水管問題">水管問題</option>
+                    <option value="電路問題">電路問題</option>
+                    <option value="屋頂修繕">屋頂修繕</option>
+                    <option value="地磚修整">地磚修整</option>
+                    <option value="牆壁修整">牆壁修整</option>
+                    <option value="抽化糞池">抽化糞池</option>
+                    <option value="瓦斯管線調整">瓦斯管線調整</option>
+                    <option value="窗戶安裝">窗戶安裝</option>
+                    <option value="空調安裝">空調安裝</option>
+                    <option value="其他">其他</option>
+                </select>
+                
+                <label for="details">詳細描述：</label>
+                <textarea id="details" name="details" required></textarea>
+                
+                <button type="submit" class="submit-button">送出請求</button>
+            </form>
+        </section>
+
+        <section class="feedback" id="feedbackSection" style="display: none;">
+            <h2>謝謝您的報修</h2>
+            <p>我們已經收到您的請求，將儘快與您聯繫！</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 水電媒合平台</p>
+    </footer>
+
+    <script>
+        document.getElementById('repairForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('repairForm').style.display = 'none';
+            document.getElementById('feedbackSection').style.display = 'block';
+            alert('您的報修請求已送出，我們將儘快處理！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

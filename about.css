@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #007BFF;
+    background: linear-gradient(135deg, #2086f4, #044589);
     color: #fff;
     padding: 15px 20px;
     text-align: center;
@@ -73,13 +73,13 @@ nav ul li a:hover {
 }
 
 .about-section h2 {
-    color: #007BFF;
+    color: #053f7d;
 }
 
 footer {
     text-align: center;
     padding: 15px 0;
-    background: #007BFF;
+    background: linear-gradient(135deg, #2086f4, #044589);
     color: #fff;
 }
 

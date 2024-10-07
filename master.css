@@ -9,7 +9,7 @@ header {
     text-align: center;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #007BFF; /* 使用主题色 */
+    background: linear-gradient(135deg, #2086f4, #044589); /* 使用主题色 */
     color: white; /* 文字颜色 */
     border-radius: 5px; /* 圆角效果 */
 }

@@ -21,6 +21,7 @@
                 <li><a href="about.html">關於本網站</a></li>
             </ul>
         </nav>
+        <button class="repair-button" onclick="window.location='repair.html'">我要報修</button>
     </header>
 
     <main>
@@ -36,7 +37,7 @@
                     <h3>張師傅</h3>
                     <p>專業領域：水管修理</p>
                     <p>自我介紹：專注於水管的安裝和維修，經驗豐富。</p>
-                    <button onclick="startChat('張師傅'); event.stopPropagation();">聯絡</button>
+                    <button class="contact-button" onclick="startChat('張師傅'); event.stopPropagation();">聯絡</button>
                 </div>
                 <img src="master3.png" alt="張師傅" class="plumber-photo">
             </div>
@@ -45,7 +46,7 @@
                     <h3>李師傅</h3>
                     <p>專業領域：電路維修</p>
                     <p>自我介紹：專精於電路系統的檢修，提供專業的服務。</p>
-                    <button onclick="startChat('李師傅'); event.stopPropagation();">聯絡</button>
+                    <button class="contact-button" onclick="startChat('李師傅'); event.stopPropagation();">聯絡</button>
                 </div>
                 <img src="master2.png" alt="李師傅" class="plumber-photo">
             </div>
@@ -59,11 +60,11 @@
                 
                 <label for="email">電子郵件：</label>
                 <input type="email" id="email" name="email" required>
-                
-                <label for="message">需求描述：</label>
+
+                <label for="message">需求描述:</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">送出</button>
+                <button type="submit" class="contact-button">送出</button>
             </form>
         </section>
     </main>
@@ -76,12 +77,12 @@
     <div id="chatWindow" class="chat-window">
         <div class="chat-header">
             <span id="chatTitle">與師傅聊天</span>
-            <button onclick="closeChat()">關閉</button>
+            <button onclick="closeChat()" class="close-button">關閉</button>
         </div>
         <div class="chat-body" id="chatBody"></div>
         <div class="chat-input">
             <input type="text" id="chatMessage" placeholder="輸入訊息..." />
-            <button onclick="sendMessage()">發送</button>
+            <button onclick="sendMessage()" class="send-button">發送</button>
         </div>
     </div>
 
@@ -106,8 +107,9 @@
             if (messageText) {
                 const chatBody = document.getElementById('chatBody');
                 const messageElement = document.createElement('div');
+                const timestamp = new Date().toLocaleTimeString(); // 获取当前时间
                 messageElement.className = 'chat-message user-message';
-                messageElement.innerText = messageText;
+                messageElement.innerText = `[${timestamp}] ${messageText}`;
                 chatBody.appendChild(messageElement);
                 messageInput.value = '';
 
